@@ -13,6 +13,8 @@
         <link href="{{ asset('css/style.css') }}" rel="stylesheet">
         <link href="{{ asset('css/responsive.css') }}" rel="stylesheet">
         <link href="{{ asset('css/colors.css') }}" rel="stylesheet">
+        <link href="{{ asset('css/suisse.css') }}" rel="stylesheet">
+        <link href="{{ asset('css/jquery-jvectormap-2.0.3.css') }}" rel="stylesheet">
         <link href="{{ asset('css/jquery.fancybox.min.css') }}" rel="stylesheet">
     </head>
 <body>
@@ -89,6 +91,14 @@
 
         <div class="section lb">
             <div class="container">
+                <div class="col">
+                    <div id="map"></div>
+                    {{--@include('suisse')--}}
+                </div>
+            </div>
+        </div>
+        <div class="section lb">
+            <div class="container">
                 <div class="section-title text-center clearfix mb-4">
                     <h4>Derniers Stages</h4>
                 </div>
@@ -133,9 +143,7 @@
                         @endforeach
                     @endif
 
-
                 </div><!-- end alljobs -->
-
             </div><!-- end container -->
         </div><!-- end section -->
 
@@ -161,11 +169,15 @@
 
     </div><!-- end wrapper -->
     <!-- /END SITE -->
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+    <script src="{{ asset('js/jquery-migrate.min.js') }}" defer></script>
     <script src="{{ asset('js/all.js') }}" defer></script>
     <script src="{{ asset('js/jquery.fancybox.min.js') }}" defer></script>
+    <script src="{{ asset('js/jquery-jvectormap-2.0.3.min.js') }}" defer></script>
+    <script src="{{ asset('js/jquery-jvectormap-ch-merc.js') }}" defer></script>
     <script src="{{ asset('js/custom.js') }}" defer></script>
+
 </body>
 </html>

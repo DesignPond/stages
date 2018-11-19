@@ -17,6 +17,7 @@ class AddColsToUsersTable extends Migration
             $table->text('rue')->nullable();
             $table->string('npa');
             $table->string('ville');
+            $table->integer('canton_id');
             $table->string('telephone')->nullable();
             $table->string('fax')->nullable();
             $table->string('cp')->nullable();

@@ -30,12 +30,6 @@
      LOADER -->
      =============================================== */
 
-    $(window).load(function() {
-        $('.cssload-container').delay(300).fadeOut('slow');
-        $('body').delay(300).css({
-            'overflow': 'visible'
-        });
-    })
     
    /* ==============================================
      FUN FACTS -->
@@ -72,6 +66,75 @@
 
     $('.header .nav-tabs > li > a').hover(function() {
         $(this).tab('show');
+    });
+
+    $('#map').vectorMap({
+        map: 'ch_merc',
+        zoomOnScroll:false,
+        backgroundColor:'#f3f6f9',
+        regionStyle:{
+            initial: {
+                fill: 'black',
+                "fill-opacity": 1,
+                stroke: 'none',
+                "stroke-width": 0,
+                "stroke-opacity": 1
+            },
+            hover: {
+                "fill-opacity": 0.8,
+                cursor: 'pointer'
+            },
+            selected: {
+                fill: 'yellow'
+            },
+            selectedHover: {
+            }
+        },
+        regionLabelStyle:{
+            initial: {
+                'font-family': 'Verdana',
+                'font-size': '10',
+                'font-weight': 'normal',
+                cursor: 'default',
+                fill: 'white'
+            },
+            hover: {
+                cursor: 'pointer'
+            }
+        },
+        labels: {
+            regions: [{
+                    "name": "join_data",
+                    "data": [
+                        ["5", "AG"],
+                        ["9", "AR"],
+                        ["3311", "AI"],
+                        ["3306", "BL"],
+                        ["3308", "BS"],
+                        ["3307", "BE"],
+                        ["3304", "FR"],
+                        ["2", "GE"],
+                        ["12", "GL"],
+                        ["13", "GR"],
+                        ["3", "JU"],
+                        ["6", "LU"],
+                        ["4", "NE"],
+                        ["7", "NW"],
+                        ["3310", "OW"],
+                        ["10", "SG"],
+                        ["14", "SH"],
+                        ["16", "SZ"],
+                        ["3309", "SO"],
+                        ["17", "TG"],
+                        ["11", "TI"],
+                        ["18", "UR"],
+                        ["8", "VS"],
+                        ["3305", "VD"],
+                        ["20", "ZG"],
+                        ["19", "ZH"]
+                    ],
+                }]
+        }
     });
 
     /* ==============================================

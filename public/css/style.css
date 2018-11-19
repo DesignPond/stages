@@ -1481,10 +1481,11 @@ h5.color3 {
 }
 
 #map {
-    height: 400px;
+    height: 540px;
     position: relative;
     width: 100%;
     z-index: 1;
+    padding:10px;
 }
 
 #map img {
