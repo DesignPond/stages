@@ -68,73 +68,48 @@
         $(this).tab('show');
     });
 
-    $('#map').vectorMap({
-        map: 'ch_merc',
-        zoomOnScroll:false,
-        backgroundColor:'#f3f6f9',
-        regionStyle:{
-            initial: {
-                fill: 'black',
-                "fill-opacity": 1,
-                stroke: 'none',
-                "stroke-width": 0,
-                "stroke-opacity": 1
-            },
-            hover: {
-                "fill-opacity": 0.8,
-                cursor: 'pointer'
-            },
-            selected: {
-                fill: 'yellow'
-            },
-            selectedHover: {
-            }
-        },
-        regionLabelStyle:{
-            initial: {
-                'font-family': 'Verdana',
-                'font-size': '10',
-                'font-weight': 'normal',
-                cursor: 'default',
-                fill: 'white'
-            },
-            hover: {
-                cursor: 'pointer'
-            }
-        },
-        labels: {
-            regions: [{
-                    "name": "join_data",
-                    "data": [
-                        ["5", "AG"],
-                        ["9", "AR"],
-                        ["3311", "AI"],
-                        ["3306", "BL"],
-                        ["3308", "BS"],
-                        ["3307", "BE"],
-                        ["3304", "FR"],
-                        ["2", "GE"],
-                        ["12", "GL"],
-                        ["13", "GR"],
-                        ["3", "JU"],
-                        ["6", "LU"],
-                        ["4", "NE"],
-                        ["7", "NW"],
-                        ["3310", "OW"],
-                        ["10", "SG"],
-                        ["14", "SH"],
-                        ["16", "SZ"],
-                        ["3309", "SO"],
-                        ["17", "TG"],
-                        ["11", "TI"],
-                        ["18", "UR"],
-                        ["8", "VS"],
-                        ["3305", "VD"],
-                        ["20", "ZG"],
-                        ["19", "ZH"]
-                    ],
-                }]
+    $("#map-container AREA").mouseover(function(){
+        var regionMap = '.'+$(this).attr('id')+'-map';
+        var regionList = '.'+$(this).attr('id')+'-list';
+        $(regionMap).css('display', 'inline');
+    console.log(regionMap);
+        // Check if a click event has occurred and only change the Region hover state accordingly
+        if (! $('#practice-container ul').hasClass('selected')) {
+            $(regionList).css('display', 'inline');
         }
+    }).mouseout(function(){
+        var regionMap = '.'+$(this).attr('id')+'-map';
+        var regionList = '.'+$(this).attr('id')+'-list';
+
+        // Check if a click event has occurred and only change the Region hover state accordingly
+        if (! $(regionMap).hasClass('selected')) {
+            $(regionMap).css('display', 'none');
+        }
+
+        // Check if a click event has occurred and only change the Region hover state accordingly
+        if (! $('#practice-container ul').hasClass('selected')) {
+            $(regionList).css('display', 'none');
+        }
+    });
+
+    $("#map-container AREA").click(function(){
+        $('#map-container img.region').removeClass('selected').css('display', 'none');
+        $('#practice-container ul').removeClass('selected').css('display', 'none');
+
+        var regionMap = '.'+$(this).attr('id')+'-map';
+        var regionList = '.'+$(this).attr('id')+'-list';
+        $(regionMap).addClass('selected').css('display', 'inline');
+        $(regionList).addClass('selected').css('display', 'inline');
+    });
+
+
+    var allStates = $("svg .st0");
+
+    allStates.on("click", function() {
+
+        var regionMap = $(this).attr('id');
+        console.log(regionMap);
+
     });
 
     /* ==============================================

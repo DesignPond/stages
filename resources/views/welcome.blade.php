@@ -14,7 +14,6 @@
         <link href="{{ asset('css/responsive.css') }}" rel="stylesheet">
         <link href="{{ asset('css/colors.css') }}" rel="stylesheet">
         <link href="{{ asset('css/suisse.css') }}" rel="stylesheet">
-        <link href="{{ asset('css/jquery-jvectormap-2.0.3.css') }}" rel="stylesheet">
         <link href="{{ asset('css/jquery.fancybox.min.css') }}" rel="stylesheet">
     </head>
 <body>
@@ -92,8 +91,8 @@
         <div class="section lb">
             <div class="container">
                 <div class="col">
-                    <div id="map"></div>
-                    {{--@include('suisse')--}}
+
+                    @include('suisse')
                 </div>
             </div>
         </div>
@@ -175,8 +174,6 @@
     <script src="{{ asset('js/jquery-migrate.min.js') }}" defer></script>
     <script src="{{ asset('js/all.js') }}" defer></script>
     <script src="{{ asset('js/jquery.fancybox.min.js') }}" defer></script>
-    <script src="{{ asset('js/jquery-jvectormap-2.0.3.min.js') }}" defer></script>
-    <script src="{{ asset('js/jquery-jvectormap-ch-merc.js') }}" defer></script>
     <script src="{{ asset('js/custom.js') }}" defer></script>
 
 </body>
