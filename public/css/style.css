@@ -190,7 +190,7 @@ small,
 ******************************************/
 
 .header {
-    padding: 20px 0;
+    padding: 10px 0;
     background-color: #ffffff;
     position: relative;
     z-index: 10;
@@ -198,7 +198,8 @@ small,
 }
 
 .header .btn {
-    padding: 10px 17px !important;
+    padding: 7px 11px !important;
+    font-size: 15px;
 }
 
 .navbar-default {
@@ -218,10 +219,10 @@ small,
 .navbar-brand h1{
     text-transform: uppercase;
     font-size: 30px;
-    color: #1c2b39;
+    color: #004c7d;
 }
 .navbar-brand h1 span{
-    color: #9a2517;
+    color: #b70f1d;
 }
 
 
@@ -242,6 +243,15 @@ small,
 
 .navbar {
     margin-top: 8px;
+}
+
+.nav-middle{
+    display: flex;
+    align-items: center;
+}
+
+.nav-middle li:last-child{
+    padding-left: 10px;
 }
 
 .navbar-default .navbar-nav > li .btn {
@@ -269,7 +279,7 @@ li.dropdown.membermenu a.dropdown-toggle:hover,
 li.dropdown.membermenu a.dropdown-toggle {
     background-color: #f3f6f9 !important;
     border-radius: 100px;
-    color: #18293b !important;
+    color: #004c7d !important;
     border: 1px solid #eaedf0;
     margin-top: 8px;
     margin-right: 20px;
@@ -629,16 +639,15 @@ h5.color3 {
 
 .home-title h3 {
     padding: 0;
-    margin: 0 0 27px;
-    line-height: 1;
-    text-transform: uppercase;
-    font-size: 32px;
+    margin: 0 0 15px;
+    line-height: 32px;
+    font-size: 23px;
     color: #ffffff;
 }
 
 .home-title p {
     padding: 0;
-    margin: 0 0 28px;
+    margin: 0 0 18px;
     font-weight: 400;
     color: rgba(255, 255, 255, 0.8);
     font-size: 15px;
@@ -1793,7 +1802,6 @@ a img.aligncenter {
     height: 50px !important;
     box-shadow: none !important;
     border: 0 !important;
-    width: 100%;
 }
 
 .customform .btn {
@@ -2375,7 +2383,10 @@ select.mobile-device {
     font-size: 14px;
     height: 40px;
     line-height: 1.42857;
-    width: 100%;
+}
+
+.input-group-text{
+    border:none;
 }
 
 .submit-form .form-control::-moz-placeholder {

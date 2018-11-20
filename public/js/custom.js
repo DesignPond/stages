@@ -104,11 +104,23 @@
 
 
     var allStates = $("svg .st0");
+    var wrapper   = $('#wrapper_listing');
+    var base_url  = location.protocol + "//" + location.host+"/";
 
     allStates.on("click", function() {
 
-        var regionMap = $(this).attr('id');
-        console.log(regionMap);
+        var region = $(this).attr('id');
+        allStates.removeClass('active');
+        $(this).addClass('active');
+
+        $.get(base_url + 'canton/' + region, {}).done(function(response) {
+            console.log("success");
+            wrapper.html(response);
+
+            $('html, body').animate({
+                scrollTop: $('#listing').offset().top -130
+            }, 500, 'linear');
+        });
 
     });
 

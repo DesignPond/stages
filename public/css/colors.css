@@ -26,7 +26,7 @@
 .whoweare hr,
 .service-list i,
 .content-title hr {
-    border-color: #c84133 !important;
+    border-color: #b70f1d !important;
 }
 
 .service-list i,
@@ -44,8 +44,8 @@
 .part-badge,
 .btn-primary {
     color: #ffffff !important;
-    background-color: #e74c3c !important;
-    border-color: #c84133 !important;
+    background-color: #b70f1d !important;
+    border-color: #b70f1d !important;
 }
 
 .tags a:hover,
@@ -54,8 +54,8 @@
 .btn-primary:hover,
 .btn-primary:focus {
     color: #ffffff !important;
-    background-color: #c84133 !important;
-    border-color: #e74c3c !important;
+    background-color: #b70f1d !important;
+    border-color: #b70f1d !important;
 }
 
 .customform i,
@@ -79,11 +79,11 @@
 a:hover,
 a:focus,
 .color {
-    color: #e74c3c !important;
+    color: #b70f1d !important;
 }
 
 .job-title {
-    border-top-color: #e74c3c !important;
+    border-top-color: #b70f1d !important;
 }
 
 
@@ -134,16 +134,16 @@ a:focus,
 .btn-custom {
     margin-top: 20px;
     background-color: transparent !important;
-    border: 2px solid #e74c3c;
-    color: #e74c3c !important;
+    border: 2px solid #b70f1d;
+    color: #b70f1d !important;
     padding: 10px 30px;
 }
 
 .btn-custom:hover,
 .btn-custom:focus {
     background-color: transparent !important;
-    border: 2px solid #c84133;
-    color: #c84133 !important;
+    border: 2px solid #b70f1d;
+    color: #b70f1d !important;
     padding: 10px 30px;
 }
 

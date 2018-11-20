@@ -13,6 +13,7 @@
 
 
 Route::get('/', 'FrontendController@index')->name('frontend');
+Route::get('/canton/{id}', 'FrontendController@canton')->name('canton');
 
 Auth::routes();
 

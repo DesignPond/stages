@@ -60,3 +60,21 @@
     max-width: 150px;
     word-wrap: break-word;
 }
+
+.st0{fill:#004c7d;stroke:#FFFFFF;stroke-width:0.5;}
+
+.st0.disabled{
+    fill: #fff;
+}
+
+.st0.active{
+    fill: #b70f1d;
+}
+
+.st0:hover{
+    fill:#11649a;
+    stroke:#FFFFFF;
+    stroke-width:0.8;
+    cursor: pointer;
+}
+.st0.disabled:hover{fill:#fff;stroke:#FFFFFF;stroke-width:0.8;}

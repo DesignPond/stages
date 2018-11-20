@@ -28,4 +28,9 @@ class User extends Authenticatable
     protected $hidden = [
         'password', 'remember_token',
     ];
+
+    public function canton()
+    {
+        return $this->belongsTo('App\Canton','canton_id');
+    }
 }
