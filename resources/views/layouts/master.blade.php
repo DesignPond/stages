@@ -24,7 +24,7 @@
         <div class="container">
 
             <nav class="navbar navbar-expand-lg">
-                <a class="navbar-brand" href="#">
+                <a class="navbar-brand" href="{{ url('/') }}">
                     <h1>Stages <span>Droit</span></h1>
                 </a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -50,11 +50,10 @@
                     </ul>
                     <ul class="navbar-nav nav-middle">
                         @auth
-                            <li><a class="btn btn-primary" title="" href="#">Créer une annonce</a></li>
+                            <li><a class="btn btn-default" title="" href="#">Créer une annonce</a></li>
                         @else
-                            <li class="nav-item">
-                                <a class="btn btn-primary" href="{{ url('register') }}">Créer un compte</a>
-                            </li>
+                            <li class="nav-item"><a class="btn btn-inverse" href="{{ url('login') }}">Login</a></li>
+                            <li class="nav-item"><a class="btn btn-primary" href="{{ url('register') }}">Créer un compte</a></li>
                         @endauth
                         <li><a href="http://www.unine.ch"><img src="{{ asset('images/unine.svg') }}" width="95" height="65"></a></li>
                     </ul>

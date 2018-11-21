@@ -33,4 +33,9 @@ class User extends Authenticatable
     {
         return $this->belongsTo('App\Canton','canton_id');
     }
+
+    public function jobs()
+    {
+        return $this->hasMany('App\Job');
+    }
 }

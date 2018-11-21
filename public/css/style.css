@@ -199,8 +199,8 @@ small,
 }
 
 .header .btn {
-    padding: 7px 11px !important;
-    font-size: 15px;
+    padding: 5px 9px !important;
+    font-size: 13px;
 }
 
 .navbar-default {
@@ -249,6 +249,10 @@ small,
 .nav-middle{
     display: flex;
     align-items: center;
+}
+
+.nav-middle li{
+   margin-right: 5px;
 }
 
 .nav-middle li:last-child{
@@ -622,7 +626,7 @@ h5.color3 {
 }
 
 .hero {
-    padding: 4em 0;
+    padding: 2.7em 0;
     background: url(../images/demo.png) no-repeat center center scroll;
     -webkit-background-size: cover;
     -moz-background-size: cover;
@@ -632,6 +636,8 @@ h5.color3 {
 
 .home-title {
     padding: 30px 80px 30px 0;
+    max-width: 800px;
+    margin: 0 auto;
 }
 
 .home-title.rightside {
@@ -1083,11 +1089,12 @@ h5.color3 {
 
 .nav-pills > li > a {
     font-size: 13px;
-    padding: 10px 20px;
     border: 0;
     box-shadow: none;
     border-radius: 0;
     color: #4b5c6e !important;
+    display: block;
+    padding: 10px 0px 10px 20px;
 }
 
 .nav-pills > li.active > a,
@@ -1110,6 +1117,7 @@ h5.color3 {
 .nav-pills > li {
     margin: 0;
     padding: 0;
+    width:100%;
     border-bottom: 1px solid #ededed;
     border-left: 1px solid #ededed;
     border-right: 1px solid #ededed;

@@ -1,15 +1,14 @@
-@extends('layouts.app')
-
+@extends('layouts.master')
 @section('content')
+
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
-            <div class="card">
-                <div class="card-header">{{ __('Reset Password') }}</div>
 
+            <div class="card px-6 py-6 shadow-11 hover-shadow-9 text-default border mt-5">
                 <div class="card-body">
-                    <form method="POST" action="{{ route('password.update') }}">
-                        @csrf
+                    <h5 class="fw-500 my-2">Vérifier votre adresse email</h5>
+                    <form method="POST" action="{{ route('password.update') }}">@csrf
 
                         <input type="hidden" name="token" value="{{ $token }}">
 
@@ -51,9 +50,7 @@
 
                         <div class="form-group row mb-0">
                             <div class="col-md-6 offset-md-4">
-                                <button type="submit" class="btn btn-primary">
-                                    {{ __('Reset Password') }}
-                                </button>
+                                <button type="submit" class="btn btn-primary  btn-sm">Réinitialier le mot de passe</button>
                             </div>
                         </div>
                     </form>

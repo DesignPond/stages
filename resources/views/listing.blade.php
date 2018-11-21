@@ -42,6 +42,14 @@
                     </div><!-- end job-tab -->
 
                 @endforeach
+            @else
+                <div class="job-tab" style="display: block;">
+                    <div class="row">
+                        <div class="col text-center">
+                            <p class="mb-0">Encore aucun stage</p>
+                        </div>
+                    </div>
+                </div>
             @endif
 
         </div><!-- end alljobs -->
