@@ -14,7 +14,10 @@
 
 Route::get('/', 'FrontendController@index')->name('frontend');
 Route::get('/canton/{id}', 'FrontendController@canton')->name('canton');
+Route::match(['get', 'post'],'search', 'FrontendController@search');
 
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+

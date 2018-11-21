@@ -32,6 +32,16 @@ class FrontendController extends Controller
         return view('welcome')->with(['jobs' => $jobs, 'cantons' => $cantons]);
     }
 
+    public function search(Request $request)
+    {
+        $jobs = Job::with(['user','type'])->type($request->input('type_id'))->whereHas('user', function ($query) use ($request) {
+            if(!empty($request->input('name'))) $query->where('users.name', 'LIKE', '%'.$request->input('name').'%');
+            if(!empty($request->input('ville'))) $query->where('users.ville', 'LIKE', '%'.$request->input('ville').'%');
+        })->get();
+
+        return view('results')->with(['jobs' => $jobs, 'title' => 'Résultats']);
+    }
+
     /**
      * Show the application dashboard.
      *
@@ -49,6 +59,6 @@ class FrontendController extends Controller
              return view('listing')->with(['jobs' => $jobs, 'title' => $canton->title ])->render();
         }
 
-        return view('canton')->with(['jobs' => $jobs, 'title' => $canton->title ]);
+        return view('results')->with(['jobs' => $jobs, 'title' => $canton->title ]);
     }
 }

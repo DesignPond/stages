@@ -16,15 +16,20 @@ class Job extends Model
             return 'success';
         }
 
-        if($this->type_id == 1){
+        if($this->type_id == 2){
             return 'primary';
         }
 
-        if($this->type_id == 1){
+        if($this->type_id == 3){
             return 'info';
         }
 
         return 'warning';
+    }
+
+    public function scopeType($query,$type_id)
+    {
+        if($type_id) $query->where('type_id', '=', $type_id);
     }
 
     public function user()

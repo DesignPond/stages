@@ -1,6 +1,6 @@
 <div class="section lb pt-4">
     <div class="container">
-        <div class="section-title text-center clearfix mb-4">
+        <div class="section-title text-center clearfix mb-4 mt-4">
             <h4>Stages {{ $title }}</h4>
         </div>
         <div class="all-jobs job-listing clearfix" id="listing">

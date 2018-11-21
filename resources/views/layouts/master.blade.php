@@ -10,6 +10,7 @@
     <link href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900" rel="stylesheet">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.13.2/css/bootstrap-select.min.css">
     <link href="{{ asset('css/style.css') }}" rel="stylesheet">
     <link href="{{ asset('css/responsive.css') }}" rel="stylesheet">
     <link href="{{ asset('css/colors.css') }}" rel="stylesheet">
@@ -66,31 +67,25 @@
 
     @yield('content')
 
-    <div id="sitefooter-wrap" class="stickyfooter">
-        <div id="sitefooter" class="container">
+
+    <div id="sitefooter" class="stickyfooter">
+        <div class="container">
             <div id="copyright" class="row">
-                <div class="col">
-                    <p>YourJob ® is a designed and registered trademark of <a href="http://psdconverthtml.com">PSD to HTML</a> INC.</p>
-                </div>
-                <div class="col">
-                    <ul class="list-inline text-right">
-                        <li><a href="#">Terms of Usage</a></li>
-                        <li><a href="#">Copyrights</a></li>
-                        <li><a href="#">License</a></li>
-                        <li><a href="#">Contact</a></li>
-                    </ul>
+                <div class="col d-flex align-items-center py-2">
+                    <a href="http://unine.ch">® UniNE</a>
                 </div>
             </div>
         </div>
     </div>
 
-    <div class="dmtop"><i class="fa fa-angle-up"></i></div>
 
 </div><!-- end wrapper -->
 <!-- /END SITE -->
 <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.13.2/js/bootstrap-select.min.js"></script>
+
 <script src="{{ asset('js/jquery-migrate.min.js') }}" defer></script>
 <script src="{{ asset('js/all.js') }}" defer></script>
 <script src="{{ asset('js/jquery.fancybox.min.js') }}" defer></script>

@@ -23,7 +23,7 @@ class JobsTableSeeder extends Seeder
                 'title' => $faker->sentence(4),
                 'description' => $faker->text,
                 'valid_until' => \Carbon\Carbon::now()->addWeek($i),
-                'type_id' => 1,
+                'type_id' => array_random([1,2,3]),
                 'remunere' => 1,
                 'created_at' => \Carbon\Carbon::now(),
                 'updated_at' => \Carbon\Carbon::now(),

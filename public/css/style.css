@@ -48,6 +48,7 @@
 html,
 body {
     height: 100%;
+    background: #f3f6f9;
 }
 
 body,
@@ -1794,6 +1795,9 @@ a img.aligncenter {
 
 .customform .bootstrap-select > .dropdown-toggle {
     font-size: 13px !important;
+    line-height: 36px;
+    color: #656565;
+    background: #f3f6f9;
 }
 
 .customform .form-control {
@@ -3622,17 +3626,18 @@ blockquote {
 }
 
 #wrapper {
-    padding-bottom: 11em;
+
 }
 
 .stickyfooter {
     position: fixed;
     right: 0;
     bottom: 0;
-    z-index: 1;
-    padding: 80px 0 60px !important;
+    z-index: 10;
+    padding: 5px 0 5px !important;
     left: 0;
-    background: url(../images/fbg.jpg) no-repeat center center scroll;
+    background: #e9ecef;
+    color: #004c7d;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
@@ -3641,12 +3646,11 @@ blockquote {
 
 #sitefooter-wrap {
     text-transform: capitalize;
-    padding: 40px 0;
+    padding: 5px 0;
 }
 
-#sitefooter {
-    color: #fff;
-    position: relative;
+#sitefooter a{
+    color: #454545;
 }
 
 .link-widget ul {

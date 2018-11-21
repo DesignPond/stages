@@ -102,7 +102,6 @@
         $(regionList).addClass('selected').css('display', 'inline');
     });
 
-
     var allStates = $("svg .st0");
     var wrapper   = $('#wrapper_listing');
     var base_url  = location.protocol + "//" + location.host+"/";
@@ -111,19 +110,25 @@
 
         var region = $(this).attr('id');
         allStates.removeClass('active');
+
         $(this).addClass('active');
 
         $.get(base_url + 'canton/' + region, {}).done(function(response) {
-            console.log("success");
+            $('#loading').show();
+
             wrapper.html(response);
 
             $('html, body').animate({
                 scrollTop: $('#listing').offset().top -130
             }, 500, 'linear');
+
+            $('#loading').hide();
+
         });
 
     });
 
+    $('.select').selectpicker();
     /* ==============================================
     BACK TOP
     =============================================== */
