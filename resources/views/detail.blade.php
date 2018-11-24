@@ -15,7 +15,7 @@
                     <h3><a href="job-single.html" title="">{{ $job->title }}</a></h3>
                     <small>
                         <span>Publisher : <a href="#">{{ $job->user->name }}</a></span>
-                        <span>Publié : {{ $job->created_at->format('d/m/Y') }}</span>
+                        <span>Publié : {{ $job->created_at->format('d.m.Y') }}</span>
                     </small>
                     <hr class="invis">
                     <div class="description">{{ $job->description }}</div>

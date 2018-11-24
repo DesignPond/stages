@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\User;
 
 class ProfilController extends Controller
 {
@@ -11,9 +12,16 @@ class ProfilController extends Controller
         return view('profil.edit');
     }
 
-    public function create()
+    public function update(Request $request, $id)
     {
-        return view('profil.create');
+        $user = User::findOrFail($id);
+
+        if(!$user) { return false; }
+
+        $user->fill($request->only(['name','email','rue','canton_id','npa','ville','telephone','fax','cp','complement','website','social']));
+        $user->save();
+
+        return redirect('/profil');
     }
 
     public function jobs()

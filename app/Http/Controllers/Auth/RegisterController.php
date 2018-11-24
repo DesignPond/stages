@@ -51,7 +51,12 @@ class RegisterController extends Controller
         return Validator::make($data, [
             'name' => 'required|string|max:255',
             'email' => 'required|string|email|max:255|unique:users',
-            'password' => 'required|string|min:6|confirmed',
+            'password'   => 'required|string|min:6|confirmed',
+            'rue'        => 'required',
+            'canton_id'  => 'required',
+            'npa'        => 'required',
+            'ville'      => 'required',
+            'telephone'  => 'required',
         ]);
     }
 
@@ -64,9 +69,19 @@ class RegisterController extends Controller
     protected function create(array $data)
     {
         return User::create([
-            'name' => $data['name'],
-            'email' => $data['email'],
-            'password' => Hash::make($data['password']),
+            'name'       => $data['name'],
+            'email'      => $data['email'],
+            'password'   => Hash::make($data['password']),
+            'rue'        => $data['rue'],
+            'canton_id'  => $data['canton_id'],
+            'npa'        => $data['npa'],
+            'ville'      => $data['ville'],
+            'telephone'  => isset($data['telephone']) && !empty($data['telephone']) ? $data['telephone'] : null,
+            'fax'        => isset($data['fax']) && !empty($data['fax']) ? $data['fax'] : null,
+            'cp'         => isset($data['cp']) && !empty($data['cp']) ? $data['cp'] : null,
+            'complement' => isset($data['complement']) && !empty($data['complement']) ? $data['complement'] : null,
+            'website'    => isset($data['website']) && !empty($data['website']) ? $data['website'] : null,
+            'social'     => isset($data['social']) && !empty($data['social']) ? $data['social'] : null,
         ]);
     }
 }

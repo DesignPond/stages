@@ -29,7 +29,24 @@
     /* ==============================================
      LOADER -->
      =============================================== */
+    $('body').on('click','.deleteAction',function(event){
 
+        var $this  = $(this);
+        var action = $this.data('action');
+        var what   = $this.data('what');
+
+        var what = (0 === what.length ? 'supprimer' : what);
+        var answer = confirm('Voulez-vous vraiment ' + what + ' : '+ action +' ?');
+
+        if (answer){
+            return true;
+        }
+        return false;
+    });
+
+    $('.datetimepicker').datetimepicker({
+        format: 'DD.MM.YYYY',
+    });
     
    /* ==============================================
      FUN FACTS -->

@@ -5,112 +5,30 @@
     <div class="table-responsive job-table">
         <table id="mytable" class="table table-bordred table-striped">
             <thead>
-            <tr>
-                <th>Job Title</th>
-                <th>Freelancer</th>
-                <th>Price</th>
-                <th>Action</th>
-            </tr>
-            </thead>
-            <tbody>
-            <tr>
-                <td>
-                    <h4>
-                        <a href="#">Hiring Online English Teachers</a><br>
-                        <small>Expired date : 21.12.2016</small> <small>Last update : 11.12.2016</small>
-                    </h4>
-                </td>
-                <td><a href="#">Martin Denson</a></td>
-                <td>$31.00</td>
-                <td>
-                    <span data-placement="top" data-toggle="tooltip" title="" data-original-title="Approve"><button class="btn btn-success btn-xs"><i class="fa fa-check"></i></button></span>
-                    <span data-placement="top" data-toggle="tooltip" title="" data-original-title="Remove"><button class="btn btn-danger btn-xs"><i class="fa fa-trash"></i></button></span>
-                </td>
-            </tr>
-
-            <tr>
-                <td>
-                    <h4><a href="#">Looking blog writer for our blog</a><br>
-                        <small>Expired date : 21.12.2016</small> <small>Last update : 11.12.2016</small>
-                    </h4>
-                </td>
-                <td><a href="#">John DOE</a></td>
-                <td>$775.00</td>
-                <td>
-                    <span data-placement="top" data-toggle="tooltip" title="" data-original-title="Approve"><button class="btn btn-success btn-xs"><i class="fa fa-check"></i></button></span>
-                    <span data-placement="top" data-toggle="tooltip" title="" data-original-title="Remove"><button class="btn btn-danger btn-xs"><i class="fa fa-trash"></i></button></span>
-                </td>
-            </tr>
-
-            <tr>
-                <td>
-                    <h4><a href="#">Development Team Lead (Group Wide Technology)</a><br>
-                        <small>Expired date : 21.12.2016</small> <small>Last update : 11.12.2016</small>
-                    </h4>
-                </td>
-                <td><a href="#">Patrick Jane</a></td>
-                <td>$12.00</td>
-                <td>
-                    <span data-placement="top" data-toggle="tooltip" title="" data-original-title="Approve"><button class="btn btn-success btn-xs"><i class="fa fa-check"></i></button></span>
-                    <span data-placement="top" data-toggle="tooltip" title="" data-original-title="Remove"><button class="btn btn-danger btn-xs"><i class="fa fa-trash"></i></button></span>
-                </td>
-            </tr>
-
-            <tr>
-                <td>
-                    <h4><a href="#">Make my website responsive device compatible</a><br>
-                        <small>Expired date : 21.12.2016</small> <small>Last update : 11.12.2016</small>
-                    </h4>
-                </td>
-                <td><a href="#">Lisbon Terrasa</a></td>
-                <td>$441.00</td>
-                <td>
-                    <span data-placement="top" data-toggle="tooltip" title="" data-original-title="Approve"><button class="btn btn-success btn-xs"><i class="fa fa-check"></i></button></span>
-                    <span data-placement="top" data-toggle="tooltip" title="" data-original-title="Remove"><button class="btn btn-danger btn-xs"><i class="fa fa-trash"></i></button></span>
-                </td>
-            </tr>
-
-            <tr>
-                <td>
-                    <h4><a href="#">Looking Graphic Designer (Logo + UI)</a><br>
-                        <small>Expired date : 21.12.2016</small> <small>Last update : 11.12.2016</small>
-                    </h4>
-                </td>
-                <td><a href="#">Martin Denson</a></td>
-                <td>$55.00</td>
-                <td>
-                    <span data-placement="top" data-toggle="tooltip" title="" data-original-title="Approve"><button class="btn btn-success btn-xs"><i class="fa fa-check"></i></button></span>
-                    <span data-placement="top" data-toggle="tooltip" title="" data-original-title="Remove"><button class="btn btn-danger btn-xs"><i class="fa fa-trash"></i></button></span>
-                </td>
-            </tr>
-
-            <tr>
-                <td>
-                    <h4><a href="#">Are you Typography Expert?</a><br>
-                        <small>Expired date : 21.12.2016</small> <small>Last update : 11.12.2016</small>
-                    </h4>
-                </td>
-                <td><a href="#">Jenny Martines</a></td>
-                <td>$31.00</td>
-                <td>
-                    <span data-placement="top" data-toggle="tooltip" title="" data-original-title="Approve"><button class="btn btn-success btn-xs"><i class="fa fa-check"></i></button></span>
-                    <span data-placement="top" data-toggle="tooltip" title="" data-original-title="Remove"><button class="btn btn-danger btn-xs"><i class="fa fa-trash"></i></button></span>
-                </td>
-            </tr>
-
-            <tr>
-                <td>
-                    <h4><a href="#">Looking WordPress Developer for ThemeForest</a><br>
-                        <small>Expired date : 21.12.2016</small> <small>Last update : 11.12.2016</small>
-                    </h4>
-                </td>
-                <td><a href="#">Martin Denson</a></td>
-                <td>$11.00</td>
-                <td>
-                    <span data-placement="top" data-toggle="tooltip" title="" data-original-title="Approve"><button class="btn btn-success btn-xs"><i class="fa fa-check"></i></button></span>
-                    <span data-placement="top" data-toggle="tooltip" title="" data-original-title="Remove"><button class="btn btn-danger btn-xs"><i class="fa fa-trash"></i></button></span>
-                </td>
-            </tr>
+            @if(!\Auth::user()->jobs->isEmpty())
+                    <tr>
+                        <th class="text-left">Titre</th>
+                        <th class="text-right">Expire le</th>
+                        <th class="text-right">Action</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    @foreach(\Auth::user()->jobs as $job)
+                    <tr>
+                        <td>
+                            <h4><a href="#">{{ $job->title }}</a></h4>
+                        </td>
+                        <td class="text-right">{{ $job->valid_until->format('d.m.Y') }}</td>
+                        <td class="d-flex justify-content-end">
+                            <a class="btn btn-success btn-xs mx-1" href="{{ url('job/'.$job->id) }}"><i class="fa fa-check"></i></a>
+                            <form action="{{ url('/job/'.$job->id) }}" method="POST">
+                                <input type="hidden" name="_method" value="DELETE">{!! csrf_field() !!}
+                                <button type="submit" class="btn btn-danger btn-xs mx-1 deleteAction" data-what="supprimer" data-action="bloc: {{ $job->title }}"><i class="fa fa-trash"></i></button>
+                            </form>
+                        </td>
+                    </tr>
+                @endforeach
+            @endif
             </tbody>
         </table>
     </div><!-- end table -->

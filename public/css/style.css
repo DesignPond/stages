@@ -1087,7 +1087,8 @@ h5.color3 {
     SIDEBAR
 ******************************************/
 
-.nav-pills > li > a {
+.nav-pills > li > a ,
+.nav-pills > li > form button {
     font-size: 13px;
     border: 0;
     box-shadow: none;
@@ -1095,6 +1096,12 @@ h5.color3 {
     color: #4b5c6e !important;
     display: block;
     padding: 10px 0px 10px 20px;
+    background: none;
+    text-decoration: none;
+}
+
+.nav-pills > li > form button:hover {
+    text-decoration: none;
 }
 
 .nav-pills > li.active > a,
@@ -2800,6 +2807,7 @@ input[type="radio"] .styled:checked + label::after {
 .job-table .btn {
     margin: 0 0;
     width: 26px;
+    padding: 3px;
 }
 
 .job-table h4 {
@@ -3101,6 +3109,8 @@ input[type="radio"] .styled:checked + label::after {
 
 hr.invis {
     border-color: transparent;
+    margin-top: 0.6rem;
+    margin-bottom: 0.6rem;
 }
 
 .whoweare hr {
@@ -3420,9 +3430,6 @@ hr.invis {
     font-size: 13px;
 }
 
-.fa-star {
-    color: #ffd800;
-}
 
 
 /******************************************

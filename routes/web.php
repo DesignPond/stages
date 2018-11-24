@@ -18,10 +18,14 @@ Route::match(['get', 'post'],'search', 'FrontendController@search');
 
 Auth::routes();
 
+Route::group(['middleware' => ['auth']], function () {
 
-Route::get('/profil', 'ProfilController@index')->name('profil');
-Route::get('/profil/create', 'ProfilController@create')->name('create');
-Route::get('/profil/jobs', 'ProfilController@jobs')->name('jobs');
+    Route::get('/profil', 'ProfilController@index')->name('profil');
+    Route::post('/profil/{id}', 'ProfilController@update')->name('update');
+    Route::get('/profil/jobs', 'ProfilController@jobs')->name('jobs');
 
+    Route::resource('job', 'JobController');
+
+});
 
 
