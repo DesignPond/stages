@@ -11,6 +11,10 @@
 /******************************************
     COLORS
 ******************************************/
+.a:hover{
+    outline: none !important;
+    border: none;
+}
 
 .full-badge {
     background-color: #8e44ad;

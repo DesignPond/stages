@@ -5,6 +5,7 @@ namespace App\Http\ViewComposers;
 use Illuminate\Contracts\View\View;
 use App\Job as Job;
 use App\Type as Type;
+use App\Canton as Canton;
 
 class SearchComposer
 {
@@ -18,6 +19,7 @@ class SearchComposer
     {
         $jobs  = Job::with(['user','type'])->get();
         $types = Type::get();
+        $cantons = Canton::get();
 
         $villes = $jobs->map(function ($job, $key) {
             return $job->user->ville;
@@ -25,5 +27,6 @@ class SearchComposer
 
         $view->with('types',$types);
         $view->with('villes',$villes);
+        $view->with('listcantons',$cantons);
     }
 }

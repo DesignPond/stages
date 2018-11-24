@@ -5,8 +5,7 @@
         <svg version="1.1" id="Calque_1" xmlns:amcharts="http://amcharts.com/ammap" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 517.2 350.8" style="enable-background:new 0 0 517.2 350.8;" xml:space="preserve">
 
         <defs>
-            <amcharts:ammap  bottomLatitude="45.817216" leftLongitude="5.956532" projection="mercator" rightLongitude="10.492377" topLatitude="47.808048">
-            </amcharts:ammap>
+            <amcharts:ammap  bottomLatitude="45.817216" leftLongitude="5.956532" projection="mercator" rightLongitude="10.492377" topLatitude="47.808048"></amcharts:ammap>
         </defs>
         <g>
            <path id="CH-AG" fill="#ffffff" class="st0 {{ !$cantons->contains('CH-AG') ? 'disabled' : '' }}" d="M282.4,129.8l1.1-0.7l1.5-1.3l1.4,2l-0.1,2.1l0,0l-1.7-0.9l-0.2-0.8l-0.2-0.1L284,130l-0.2-0.1

@@ -7,19 +7,12 @@
 
                 <div class="post-padding mt-4">
 
-                    <h4 class="fw-500 my-2 mb-4">Inscription</h4>
+                    <h3 class="fw-500 my-2 mb-4">Inscription</h3>
+                    <h5 class="fw-500 my-2 text-info">Compte</h5>
                     <form method="POST" action="{{ route('register') }}">@csrf
 
                         <div class="row">
-                            <div class="col-md-6 col-sm-12">
-                                <label class="control-label">Nom de l'entreprise</label>
-                                <input type="text" class="form-control{{ $errors->has('name') ? ' is-invalid' : '' }}" name="name" required value="{{ old('name') }}">
-                                @if ($errors->has('name'))
-                                    <span class="invalid-feedback" role="alert"><strong>{{ $errors->first('name') }}</strong></span>
-                                @endif
-                            </div>
-
-                            <div class="col-md-6 col-sm-12">
+                            <div class="col-md-12 col-sm-12">
                                 <label class="control-label">Email</label>
                                 <input type="text" name="email{{ $errors->has('name') ? ' is-invalid' : '' }}" class="form-control" required value="{{ old('email') }}">
                                 @if ($errors->has('email'))
@@ -32,13 +25,56 @@
 
                         <div class="row">
                             <div class="col-md-6 col-sm-12">
+                                <label class="control-label">Mot de passe</label>
+                                <input id="password" type="password" class="form-control{{ $errors->has('password') ? ' is-invalid' : '' }}" name="password" required>
+                                @if ($errors->has('password'))
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $errors->first('password') }}</strong>
+                                    </span>
+                                @endif
+                            </div>
+                            <div class="col-md-6 col-sm-12">
+                                <label class="control-label">Confirmer le mot de passe</label>
+                                <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required>
+                            </div>
+                        </div><!-- end row -->
+
+                        <hr class="mt-4">
+                        <h5 class="fw-500 my-2 mb-4 mt-4 text-info">Information de contact</h5>
+
+                        <div class="row">
+                            <div class="col-md-12 col-sm-12">
+                                <label class="control-label">Nom de l'entreprise</label>
+                                <input type="text" class="form-control{{ $errors->has('name') ? ' is-invalid' : '' }}" name="name" required value="{{ old('name') }}">
+                                @if ($errors->has('name'))
+                                    <span class="invalid-feedback" role="alert"><strong>{{ $errors->first('name') }}</strong></span>
+                                @endif
+                            </div>
+                        </div><!-- end row -->
+
+                        <hr class="invis">
+
+                        <div class="row">
+                            <div class="col-md-12 col-sm-12">
                                 <label class="control-label">Adresse</label>
                                 <input type="text" class="form-control{{ $errors->has('rue') ? ' is-invalid' : '' }}" required value="{{ old('rue') }}" name="rue">
                                 @if ($errors->has('rue'))
                                     <span class="invalid-feedback" role="alert"><strong>{{ $errors->first('rue') }}</strong></span>
                                 @endif
                             </div>
-                            <div class="col-md-6 col-sm-12">
+                        </div><!-- end row -->
+
+                        <hr class="invis">
+
+                        <div class="row">
+                            <div class="col-md-8 col-sm-12">
+                                <label class="control-label">Ville</label>
+                                <input type="text" class="form-control{{ $errors->has('ville') ? ' is-invalid' : '' }}" required value="{{ old('ville') }}" name="ville">
+                                @if ($errors->has('ville'))
+                                    <span class="invalid-feedback" role="alert"><strong>{{ $errors->first('ville') }}</strong></span>
+                                @endif
+                            </div>
+                            <div class="col-md-4 col-sm-12">
                                 <label class="control-label">NPA</label>
                                 <input type="text" class="form-control{{ $errors->has('npa') ? ' is-invalid' : '' }}" required value="{{ old('npa') }}" name="npa">
                                 @if ($errors->has('npa'))
@@ -57,6 +93,22 @@
                             <div class="col-md-6 col-sm-12">
                                 <label class="control-label">CP</label>
                                 <input type="text" name="cp" class="form-control" value="{{ old('cp') }}">
+                            </div>
+                        </div><!-- end row -->
+
+                        <hr class="invis">
+
+                        <div class="row">
+                            <div class="col-md-12 col-sm-12">
+                                <label class="control-label">Canton</label>
+                                <select class="form-control" name="canton_id">
+                                    <option>Choix</option>
+                                    @if(!$listcantons->isEmpty())
+                                        @foreach($listcantons as $canton)
+                                            <option value="{{ $canton->id }}">{{ $canton->title }}</option>
+                                        @endforeach
+                                    @endif
+                                </select>
                             </div>
                         </div><!-- end row -->
 
@@ -88,25 +140,6 @@
                             <div class="col-md-12 col-sm-12">
                                 <label class="control-label">Site internet</label>
                                 <input type="text" class="form-control" name="website" value="{{ old('website') }}">
-                            </div>
-                        </div><!-- end row -->
-
-                        <div class="row">
-                            <div class="col-md-12 col-sm-12">
-                                <label class="control-label">Mot de passe</label>
-                                <input id="password" type="password" class="form-control{{ $errors->has('password') ? ' is-invalid' : '' }}" name="password" required>
-                                @if ($errors->has('password'))
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $errors->first('password') }}</strong>
-                                    </span>
-                                @endif
-                            </div>
-                        </div><!-- end row -->
-
-                        <div class="row">
-                            <div class="col-md-12 col-sm-12">
-                                <label class="control-label">Confirmer le mot de passe</label>
-                                <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required>
                             </div>
                         </div><!-- end row -->
 

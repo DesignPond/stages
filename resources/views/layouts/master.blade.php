@@ -39,19 +39,23 @@
                         </li>
 
                         @auth
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Votre compte</a>
-                            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <a class="dropdown-item" href="{{ url('profil') }}">Profil</a>
-                                <a class="dropdown-item" href="{{ url('') }}">Vos annonces</a>
-                                <a class="dropdown-item" href="#"><i class="fas fa-lock"></i> &nbsp;Logout</a>
-                            </div>
-                        </li>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Votre compte</a>
+                                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                    <a class="dropdown-item" href="{{ url('profil') }}">Profil</a>
+                                    <a class="dropdown-item" href="{{ url('profil/jobs') }}">Vos annonces</a>
+                                    <a class="dropdown-item" href="#">
+                                        <form action="{{ url('logout') }}" method="POST">{{ csrf_field() }}
+                                            <button class="btn btn-link btn-xs" type="submit"><span class="fas fa-power-off"></span>  &nbsp;&nbsp;Logout</button>
+                                        </form>
+                                    </a>
+                                </div>
+                            </li>
                         @endauth
                     </ul>
                     <ul class="navbar-nav nav-middle">
                         @auth
-                            <li><a class="btn btn-default" title="" href="#">Créer une annonce</a></li>
+                            <li><a class="btn btn-default" href="{{ url('job/create') }}">Créer une annonce</a></li>
                         @else
                             <li class="nav-item"><a class="btn btn-inverse" href="{{ url('login') }}">Login</a></li>
                             <li class="nav-item"><a class="btn btn-primary" href="{{ url('register') }}">Créer un compte</a></li>
