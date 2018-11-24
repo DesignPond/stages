@@ -52,6 +52,13 @@
     border-color: #b70f1d !important;
 }
 
+.btn-info:hover,
+.btn-info:focus,
+.btn-info:active
+{
+    color: #fff !important;
+}
+
 .tags a:hover,
 .contact-details li:hover i,
 .contact-details li:focus i,

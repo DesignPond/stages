@@ -25,6 +25,7 @@
         <div class="container">
 
             <nav class="navbar navbar-expand-lg">
+                <a href="http://www.unine.ch"><img src="{{ asset('images/unine.svg') }}" width="95" height="65"></a>
                 <a class="navbar-brand" href="{{ url('/') }}">
                     <h1>Stages <span>Droit</span></h1>
                 </a>
@@ -33,14 +34,14 @@
                 </button>
 
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <ul class="navbar-nav mr-auto">
+                    <ul class="navbar-nav nav-middle ml-auto">
                         <li class="nav-item active">
                             <a class="nav-link" href="{{ url('/') }}">Accueil</a>
                         </li>
 
                         @auth
                             <li class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Votre compte</a>
+                                <a class="nav-link dropdown-toggle btn btn-info" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Votre compte</a>
                                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                                     <a class="dropdown-item" href="{{ url('profil') }}">Profil</a>
                                     <a class="dropdown-item" href="{{ url('profil/jobs') }}">Vos annonces</a>
@@ -52,15 +53,13 @@
                                 </div>
                             </li>
                         @endauth
-                    </ul>
-                    <ul class="navbar-nav nav-middle">
+
                         @auth
                             <li><a class="btn btn-default" href="{{ url('job/create') }}">Créer une annonce</a></li>
                         @else
                             <li class="nav-item"><a class="btn btn-inverse" href="{{ url('login') }}">Login</a></li>
                             <li class="nav-item"><a class="btn btn-primary" href="{{ url('register') }}">Créer un compte</a></li>
                         @endauth
-                        <li><a href="http://www.unine.ch"><img src="{{ asset('images/unine.svg') }}" width="95" height="65"></a></li>
                     </ul>
                 </div>
             </nav>
