@@ -6,8 +6,7 @@
         <div class="col-md-8">
                 <div class="card px-6 py-6 shadow-11 hover-shadow-9 text-default border mt-5">
                     <div class="card-body">
-                        <h5 class="fw-500 my-2 mb-4">Définir un nouveau mot de passe</h5>
-
+                        <h5 class="fw-500 my-2 mb-4">Réinitialiser le mot de passe</h5>
                     @if (session('status'))
                         <div class="alert alert-success" role="alert">
                             {{ session('status') }}

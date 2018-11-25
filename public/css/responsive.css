@@ -89,7 +89,8 @@
         display: block !important;
     }
     .hero {
-        padding:5em 0;
+        padding: 1em 0;
+        background: url(../images/demo.png) no-repeat center center scroll;
     }
     .navbar-header {
         float: none;
@@ -135,7 +136,7 @@
 }
 
     .hero {
-        background:#18293b;
+        background: url(../images/demo.png) no-repeat center center scroll;
     }
     .container {
         width: 100%;

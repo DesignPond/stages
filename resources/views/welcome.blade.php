@@ -17,7 +17,7 @@
 
     <div class="section lb pb-6">
         <div class="container">
-            <div class="section-title text-center clearfix mb-2">
+            <div class="section-title text-center clearfix mb-0">
                 <h4>Trouver un stage par canton</h4>
             </div>
             <div class="col">
