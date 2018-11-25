@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\User;
+use App\Http\Requests\UpdateRequest;
 
 class ProfilController extends Controller
 {
@@ -12,7 +13,7 @@ class ProfilController extends Controller
         return view('profil.edit');
     }
 
-    public function update(Request $request, $id)
+    public function update(UpdateRequest $request, $id)
     {
         $user = User::findOrFail($id);
 

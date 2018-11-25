@@ -86,7 +86,7 @@
             </div>
             <div class="col-md-6 col-sm-12">
                 <label class="control-label">Fax</label>
-                <input type="text" name="fax" class="form-control" value="{{ \Auth::user()->telephone }}">
+                <input type="text" name="fax" class="form-control" value="{{ \Auth::user()->fax }}">
             </div>
         </div><!-- end row -->
 

@@ -6,6 +6,7 @@ use Illuminate\Notifications\Notifiable;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Spatie\Permission\Traits\HasRoles;
+use App\Notifications\ResetPassword as ResetPasswordNotification;
 
 class User extends Authenticatable
 {
@@ -17,8 +18,19 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password','rue','npa','ville','telephone','fax','cp','complement','website','social'
+        'name', 'email', 'password','rue','npa','ville','telephone','fax','cp','complement','website','social','canton_id'
     ];
+
+    /**
+     * Send the password reset notification.
+     *
+     * @param  string  $token
+     * @return void
+     */
+    public function sendPasswordResetNotification($token)
+    {
+        $this->notify(new ResetPasswordNotification($token));
+    }
 
     /**
      * The attributes that should be hidden for arrays.

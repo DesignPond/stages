@@ -21,7 +21,7 @@ Auth::routes();
 Route::group(['middleware' => ['auth']], function () {
 
     Route::get('/profil', 'ProfilController@index')->name('profil');
-    Route::post('/profil/{id}', 'ProfilController@update')->name('update');
+    Route::put('/profil/{id}', 'ProfilController@update')->name('update');
     Route::get('/profil/jobs', 'ProfilController@jobs')->name('jobs');
 
     Route::resource('job', 'JobController');
