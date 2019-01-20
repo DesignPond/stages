@@ -35,9 +35,11 @@ class FrontendController extends Controller
     public function search(Request $request)
     {
         $jobs = Job::with(['user','type'])->type($request->input('type_id'))->whereHas('user', function ($query) use ($request) {
-            if(!empty($request->input('name'))) $query->where('users.name', 'LIKE', '%'.$request->input('name').'%');
-            if(!empty($request->input('ville'))) $query->where('users.ville', 'LIKE', '%'.$request->input('ville').'%');
-        })->get();
+            if(!empty($request->input('search'))) $query->where('users.name', 'LIKE', '%'.$request->input('search').'%');
+            if(!empty($request->input('ville'))) $query->where('users.ville', '=', $request->input('ville'));
+        });
+
+        $jobs = !empty($request->input('search')) ? $jobs->orWhere('title','LIKE','%'.$request->input('search').'%')->get() : $jobs->get();
 
         return view('results')->with(['jobs' => $jobs, 'title' => 'Résultats']);
     }
@@ -60,5 +62,12 @@ class FrontendController extends Controller
         }
 
         return view('results')->with(['jobs' => $jobs, 'title' => $canton->title ]);
+    }
+
+    public function employer($id)
+    {
+        $employer = \App\User::with(['jobs'])->find($id);
+
+        return view('results')->with(['jobs' => $employer->jobs, 'title' => $employer->name]);
     }
 }

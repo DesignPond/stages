@@ -24,7 +24,7 @@
         <div class="row">
             <div class="col-md-12 col-sm-12">
                 <label class="control-label">Description</label>
-                <textarea class="form-control" name="description">{{ $job->description }}</textarea>
+                <textarea class="form-control redactor" name="description">{{ $job->description }}</textarea>
             </div>
         </div><!-- end row -->
 

@@ -17,6 +17,7 @@
     <link href="{{ asset('css/suisse.css') }}" rel="stylesheet">
     <link href="{{ asset('css/jquery.fancybox.min.css') }}" rel="stylesheet">
     <link href="{{ asset('css/bootstrap-datetimepicker.min.css') }}" rel="stylesheet">
+    <link rel="stylesheet" href="{{ asset('redactor/redactor.css') }}">
 </head>
 <body>
 <!-- START SITE -->
@@ -95,6 +96,14 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.21.0/moment.min.js" type="text/javascript"></script>
 <script src="{{ asset('js/bootstrap-datetimepicker.js') }}" defer></script>
 <script src="{{ asset('js/custom.js') }}" defer></script>
+
+<script src="{{ asset('redactor/config.js') }}"></script>
+<script src="{{ asset('redactor/redactor.min.js') }}"></script>
+<script src="{{ asset('redactor/fr.js') }}"></script>
+<script src="{{ asset('redactor/fontcolor.min.js') }}"></script>
+<script src="{{ asset('redactor/fontfamily.min.js') }}"></script>
+<script src="{{ asset('redactor/imagemanager.min.js') }}"></script>
+<script src="{{ asset('redactor/alignment.min.js') }}"></script>
 
 </body>
 </html>

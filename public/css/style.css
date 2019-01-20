@@ -204,6 +204,11 @@ small,
     font-size: 13px;
 }
 
+.navbar.navbar-expand-lg{
+    padding-left: 0;
+    padding-right: 0;
+}
+
 .navbar-default {
     background-color: transparent;
     border: 0;
@@ -596,7 +601,7 @@ h5.color3 {
 }
 
 .section {
-    padding: 50px 0;
+    padding: 30px 0;
     display: block;
     z-index: 2;
     position: relative;
@@ -625,7 +630,7 @@ h5.color3 {
 
 .hero {
     padding: 1em 0;
-    background: url(../images/demo.png) no-repeat center center scroll;
+    background: url(../images/demo.jpg) no-repeat center center scroll;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
@@ -1725,7 +1730,7 @@ a img.aligncenter {
 }
 
 .nopadding .customform {
-    padding: 20px 30px !important;
+    padding: 15px 0px !important;
     border: 0 !important;
     background-color: #ffffff;
 }
@@ -2808,6 +2813,10 @@ input[type="radio"] .styled:checked + label::after {
     padding: 3px;
 }
 
+.job-table .btn:hover, .job-table .btn:hover i {
+    color: #fff;
+}
+
 .job-table h4 {
     font-size: 15px;
 }
@@ -3236,6 +3245,7 @@ hr.invis {
 
 .all-jobs {
     position: relative;
+    margin-bottom: 40px;
 }
 
 .job-title {
@@ -3647,10 +3657,10 @@ blockquote {
     right: 0;
     bottom: 0;
     z-index: 10;
-    padding: 5px 0 5px !important;
+    padding: 0  !important;
     left: 0;
-    background: #e9ecef;
-    color: #004c7d;
+    background: #004c7d;
+    color: #fff;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
@@ -3663,7 +3673,7 @@ blockquote {
 }
 
 #sitefooter a{
-    color: #454545;
+    color: #fff;
 }
 
 .link-widget ul {

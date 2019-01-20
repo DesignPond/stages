@@ -1,6 +1,7 @@
 #map-view-container {
     position: relative;
     min-height: 470px;
+    margin-bottom: 40px;
 }
 
 #map-container {
@@ -61,7 +62,7 @@
     word-wrap: break-word;
 }
 
-.st0{fill:#004c7d;stroke:#FFFFFF;stroke-width:0.5;}
+.st0{fill:#b6b6b6;stroke:#FFFFFF;stroke-width:0.5;}
 
 .st0.disabled{
     fill: #fff;
@@ -72,7 +73,7 @@
 }
 
 .st0:hover{
-    fill:#11649a;
+    fill:#e2e2e2;
     stroke:#FFFFFF;
     stroke-width:0.8;
     cursor: pointer;

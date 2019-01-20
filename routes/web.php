@@ -14,6 +14,7 @@
 Route::get('/home', 'FrontendController@index')->name('frontend');
 Route::get('/', 'FrontendController@index')->name('frontend');
 Route::get('/canton/{id}', 'FrontendController@canton')->name('canton');
+Route::get('/employer/{id}', 'FrontendController@employer')->name('employer');
 Route::match(['get', 'post'],'search', 'FrontendController@search');
 
 Auth::routes();

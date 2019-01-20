@@ -3,12 +3,12 @@
         <form class="submit-form customform" action="search" method="POST">
             {!! csrf_field() !!}
             <div class="row">
-                <div class="col-md-3 col-sm-6 col-xs-12">
+                <div class="col-md-4 col-sm-6 col-xs-12">
                     <div class="input-group">
                         <div class="input-group-prepend">
-                            <span class="input-group-text" id="name"><i class="fa fa-search"></i></span>
+                            <span class="input-group-text" id="search"><i class="fa fa-search"></i></span>
                         </div>
-                        <input type="text" name="name" class="form-control" placeholder="Nom de l'étude" aria-label="name" aria-describedby="name">
+                        <input type="text" name="search" class="form-control" placeholder="Nom de l'étude/ titre de l'annonce" aria-label="search" aria-describedby="search">
                     </div>
                 </div><!-- end col -->
 
@@ -32,7 +32,7 @@
                     </select>
                 </div>
 
-                <div class="col-md-3 col-sm-6 col-xs-12">
+                <div class="col-md-2 col-sm-6 col-xs-12">
                     <button class="btn btn-primary btn-block">Rechercher</button>
                 </div><!-- end col -->
             </div><!-- end row -->

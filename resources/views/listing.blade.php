@@ -11,17 +11,15 @@
                         <div class="row">
                             <div class="col-md-2 col-sm-2 col-xs-12">
                                 <div class="post-media">
-                                    <a href="job-single.html">
-                                        <?php $illu = asset('illu/0'.array_random([1,2,3,4,5,6,7,8]).'.svg'); ?>
-                                        <img src="{{ $illu }}" width="140" height="120" alt="" class="img-responsive img-thumbnail">
-                                    </a>
+                                    <?php $illu = asset('illu/0'.array_random([1,2,3,4,5,6,7,8]).'.svg'); ?>
+                                    <img src="{{ $illu }}" width="140" height="120" alt="" class="img-responsive img-thumbnail">
                                 </div><!-- end media -->
                             </div><!-- end col -->
                             <div class="col-md-6 col-sm-6 col-xs-12">
                                 <div class="badge badge-{{ $job->badge }}">{{ $job->type->periode }} | {{ $job->type->semaines }}</div>
-                                <h3><a href="job-single.html" title="">{{ $job->title }}</a></h3>
+                                <h3>{{ $job->title }}</h3>
                                 <small>
-                                    <span>Publisher : <a href="#">{{ $job->user->name }}</a></span>
+                                    <span>Publisher : <a href="{{url('employer/'.$job->user->id) }}">{{ $job->user->name }}</a></span>
                                     <span>Publié : {{ $job->created_at->format('d.m.Y') }}</span>
                                 </small>
                             </div><!-- end col -->
@@ -32,7 +30,7 @@
                             </div><!-- end col -->
                             <div class="col-md-2 col-sm-2 col-xs-12">
                                 <div class="job-meta text-center">
-                                    <a data-options='{"arrows" : false}' data-fancybox="details_{{ $job->id }}" data-src="#details_{{ $job->id }}" href="javascript:;" class="btn btn-primary btn-sm btn-block mt-4">Information</a>
+                                    <a data-options='{"arrows" : false}' data-fancybox="details_{{ $job->id }}" data-src="#details_{{ $job->id }}" href="javascript:;" class="btn btn-primary btn-sm btn-block mt-4">Détails</a>
                                 </div>
                             </div><!-- end col -->
                         </div><!-- end row -->
