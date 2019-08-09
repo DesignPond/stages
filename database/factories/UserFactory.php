@@ -18,6 +18,33 @@ $factory->define(App\User::class, function (Faker $faker) {
         'name' => $faker->name,
         'email' => $faker->unique()->safeEmail,
         'password' => '$2y$10$TKh8H1.PfQx37YgCzwiKb.KjNyWgaHb9cbcoQgdIVFlYg7B77UdFm', // secret
-        'remember_token' => str_random(10),
+        'remember_token' => \Str::random(10),
+        'rue'         => $faker->streetAddress,
+        'npa'         => $faker->postcode,
+        'ville'       => $faker->city,
+        'telephone'   => $faker->phoneNumber,
+        'fax'         => $faker->phoneNumber,
+        'canton_id'   => \Arr::random(range(1,26)),
+    ];
+});
+
+$factory->define(App\Type::class, function (Faker $faker) {
+    return [
+        'semaines'    => '4 semaines',
+        'periode'     => 'Un seul bloc',
+        'pourcentage' => '100%'
+    ];
+});
+
+$factory->define(App\Job::class, function (Faker $faker) {
+    return [
+        'user_id' => 1,
+        'title' => $faker->sentence(4),
+        'description' => $faker->text,
+        'valid_until' => \Carbon\Carbon::now()->addWeek(2),
+        'type_id'    => \Arr::random([1,2,3]),
+        'remunere'   => 1,
+        'created_at' => \Carbon\Carbon::now(),
+        'updated_at' => \Carbon\Carbon::now(),
     ];
 });

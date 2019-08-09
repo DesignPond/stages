@@ -19,8 +19,8 @@
                             <h4><a href="#">{{ $job->title }}</a></h4>
                         </td>
                         <td class="text-right">{{ $job->valid_until->format('d.m.Y') }}</td>
-                        <td class="d-flex justify-content-end">
-                            <a class="btn btn-success btn-xs mx-1" href="{{ url('job/'.$job->id) }}"><i class="fa fa-check"></i></a>
+                        <td class="jobs-btns">
+                            <a class="btn btn-info btn-xs mx-1" href="{{ url('job/'.$job->id) }}"><i class="fa fa-check"></i></a>
                             <form action="{{ url('/job/'.$job->id) }}" method="POST">
                                 <input type="hidden" name="_method" value="DELETE">{!! csrf_field() !!}
                                 <button type="submit" class="btn btn-danger btn-xs mx-1 deleteAction" data-what="supprimer" data-action="bloc: {{ $job->title }}"><i class="fa fa-trash"></i></button>

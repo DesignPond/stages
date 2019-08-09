@@ -2811,11 +2811,24 @@ input[type="radio"] .styled:checked + label::after {
     margin: 0 0;
     width: 26px;
     padding: 3px;
+    font-size: 12px;
 }
 
 .job-table .btn:hover, .job-table .btn:hover i {
     color: #fff;
 }
+
+.jobs-btns{
+    display: flex;
+    flex-direction: row;
+    justify-content: end;
+    align-items: start;
+    vertical-align: top !important;
+}
+.jobs-btns form .btn{
+    vertical-align: top !important;
+}
+
 
 .job-table h4 {
     font-size: 15px;

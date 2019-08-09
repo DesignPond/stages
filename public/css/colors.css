@@ -93,6 +93,21 @@ a:focus,
     color: #b70f1d !important;
 }
 
+.nav-pills > li.active > a,
+.nav-pills > li.active > a:focus,
+.nav-pills > li.active > a:hover,
+.nav-pills > li:hover a,
+.nav-pills > li:focus a {
+    background: #004c7d ;
+    color: #fff !important;
+}
+
+.job-table .btn.btn-info {
+    background: #004c7d ;
+    border: 1px solid #004c7d;
+    color: #fff !important;
+}
+
 .job-title {
     border-top-color: #b70f1d !important;
 }
